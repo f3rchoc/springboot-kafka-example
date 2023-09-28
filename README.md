@@ -1,0 +1,1 @@
+# Project to practice apache kafka with spring boot.
