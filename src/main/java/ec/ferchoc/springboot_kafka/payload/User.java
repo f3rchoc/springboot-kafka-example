@@ -1,20 +1,6 @@
 package ec.ferchoc.springboot_kafka.payload;
 
-
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-
-@Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
-public final class User {
-
-    private Integer id;
-    private String firstName;
-    private String lastName;
+public record User(Integer id, String firstName, String lastName) {
 
     @Override
     public String toString() {
