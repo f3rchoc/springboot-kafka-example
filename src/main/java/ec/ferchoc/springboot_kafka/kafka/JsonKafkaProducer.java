@@ -13,7 +13,6 @@ import org.springframework.stereotype.Service;
 @AllArgsConstructor
 public class JsonKafkaProducer {
 
-
     private final KafkaTemplate<String, User> kafkaTemplate;
 
     public void sendPayload(User user) {
@@ -21,7 +20,7 @@ public class JsonKafkaProducer {
         log.info("User sent: {}", user.toString());
 
         var message = MessageBuilder.withPayload(user)
-                .setHeader(KafkaHeaders.TOPIC, "myTopic")
+                .setHeader(KafkaHeaders.TOPIC, "my-topic-json")
                 .build();
 
         this.kafkaTemplate.send(message);
